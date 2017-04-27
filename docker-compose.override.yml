@@ -2,7 +2,7 @@ version: '3'
 services:
     db:
         ports:
-            - "9432:5432" 
+            - "9432:5432"
     frontend:
         image: node:5.10
         working_dir: /frontend
@@ -11,7 +11,7 @@ services:
             - ./frontend:/frontend
         ports:
             - "3000:3000"
-    django:
+    backend:
         build: ./backend
         volumes:
             - ./backend:/app

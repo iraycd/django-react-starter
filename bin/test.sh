@@ -7,4 +7,4 @@ else
     echo "skipping frontend build..."
 fi
 
-dctest run --rm  django ./bin/test.sh "$@"
+dctest run --rm  backend ./bin/test.sh "$@"

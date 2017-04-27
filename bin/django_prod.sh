@@ -4,4 +4,4 @@
 
 source bin/env.sh
 
-dcprod run -e DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_PROD --rm django python3 manage.py $@
+dcprod run -e DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_PROD --rm backend python3 manage.py $@

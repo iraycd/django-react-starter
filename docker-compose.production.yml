@@ -3,7 +3,7 @@ services:
     db:
         volumes:
             - "./logs/postgres:/var/log/postgresql"
-    django:
+    backend:
         build:
             context: ./backend
             dockerfile: Dockerfile-production
@@ -20,7 +20,7 @@ services:
             context: ./
             dockerfile: ./nginx/Dockerfile
         depends_on:
-            - django
+            - backend
         volumes: 
             - "./backend/media:/media"
             - "./logs/nginx:/tmp/logs"

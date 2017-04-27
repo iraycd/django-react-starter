@@ -1,6 +1,6 @@
 version: '3'
 services:
-    django:
+    backend:
         build: ./backend
         volumes:
             - ./backend:/app

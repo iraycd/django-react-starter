@@ -5,7 +5,7 @@ services:
     db:
         image: postgres:9.6
         environment:
-            POSTGRES_USER: django
-            POSTRES_PASSWORD: django
+            POSTGRES_USER: backend
+            POSTRES_PASSWORD: backend
         volumes:
             - data:/var/lib/postgresql/data
