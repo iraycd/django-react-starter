@@ -4,6 +4,7 @@ volumes:
 services:
     db:
         image: postgres:9.6
+        container_name: db
         environment:
             POSTGRES_DB: ${POSTGRES_DB}
             POSTGRES_USER: ${POSTGRES_USER}
