@@ -1,0 +1,23 @@
+Django==1.11
+django-extensions==1.7.8
+
+gunicorn==19.7.0
+
+django-disposable-email-checker==1.2.1
+
+# PostgresSQL
+psycopg2==2.7.1
+
+# Rest Framework
+djangorestframework==3.6.2
+
+# Sentry
+raven==6.0.0
+
+# for date processing
+python-dateutil==2.6.0
+
+# Logging
+git+https://github.com/Seedstars/django-rest-logger.git
+
+django-rest-knox==3.0.0

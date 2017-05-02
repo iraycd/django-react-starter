@@ -1,3 +1,5 @@
+*.DS_Store
+*.css
 *sublime*
 __pycache__
 *.pyc

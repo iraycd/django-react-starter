@@ -5,7 +5,7 @@ services:
     db:
         image: postgres:9.6
         environment:
-            POSTGRES_USER: backend
-            POSTRES_PASSWORD: backend
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_USER: ${POSTGRES_USER}
         volumes:
             - data:/var/lib/postgresql/data

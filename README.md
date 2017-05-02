@@ -49,7 +49,7 @@ Wait for docker to set up container, then open [http://localhost:8000](http://lo
 In prod mode sources are added to docker image rather than mounted from host. Nginx serves static files, proxy pass to gunicorn for django app. Logs in `logs` dir.
 
 #### enable ssl
-Copy your .key and .crt files to `nginx/ssl` and run `./bin/deploy.sh`. 
+Copy your .key and .crt files to `nginx/ssl` and run `./bin/deploy.sh`.
 
 ## install dependencies
 ```sh
@@ -64,7 +64,7 @@ Copy your .key and .crt files to `nginx/ssl` and run `./bin/deploy.sh`.
 
 ```sh
 # create a backup in backups dir
-./bin/backup.sh 
+./bin/backup.sh
 
 # restore from a backup in backups dir (server must be stopped)
 ./bin/restore.sh backups/somebackup.bak
@@ -108,7 +108,7 @@ backend/conf/                 - django settings files
 backend/conf/settings.py      - default config
 backend/conf/settings_prod.py - production config
 backend/templates/            - django global templates
-backend/requirements.txt      - python dependencies
+backend/requirements/         - python dependencies
 backend/gunicorn.conf.py      - gunicorn conf for production
 backend/media/                - user uploads
 
@@ -131,7 +131,7 @@ See http://selenium-python.readthedocs.io/ for selenium driver api
 ./bin/test.sh
 
 # skip frontend build (eg, running tests repeatedly)
-./bin/test.sh --skipbuild 
+./bin/test.sh --skipbuild
 
 
 To debug tests it's possible to vnc into selenium container while its running at localhost:5900 and view the browser. Password is `secret`.

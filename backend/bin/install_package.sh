@@ -6,4 +6,4 @@ then
     exit
 fi
 
-pip3 install $package_name && pip3 freeze | grep -i $package_name | awk '{print "\n\n" $0}' >> ./requirements.txt
+pip3 install $package_name && pip3 freeze | grep -i $package_name | awk '{print "\n\n" $0}' >> ./requirements/base.txt

@@ -3,6 +3,15 @@ services:
     db:
         volumes:
             - "./logs/postgres:/var/log/postgresql"
+    frontend:
+        container_name: frontend
+        image: node:5.10
+        working_dir: /frontend
+        command: npm run-script start
+        volumes:
+            - ./frontend:/frontend
+        ports:
+            - "3000:3000"
     backend:
         build:
             context: ./backend
@@ -21,10 +30,10 @@ services:
             dockerfile: ./nginx/Dockerfile
         depends_on:
             - backend
-        volumes: 
+            - frontend
+        volumes:
             - "./backend/media:/media"
             - "./logs/nginx:/tmp/logs"
         ports:
             - "80:80"
             - "443:443"
-

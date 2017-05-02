@@ -4,14 +4,16 @@ services:
         ports:
             - "9432:5432"
     frontend:
+        container_name: frontend
         image: node:5.10
         working_dir: /frontend
-        command: npm run-script develop
+        command: npm run-script start
         volumes:
             - ./frontend:/frontend
         ports:
             - "3000:3000"
     backend:
+        container_name: backend
         build: ./backend
         volumes:
             - ./backend:/app
@@ -22,5 +24,9 @@ services:
             - "8000:8000"
         environment:
             DJANGO_SETTINGS_MODULE: ${DJANGO_SETTINGS_DEV}
+            SECRET_KEY: ${DJANGO_SECRET_KEY}
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
         depends_on:
             - db
